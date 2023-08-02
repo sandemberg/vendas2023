@@ -1,25 +1,20 @@
-import {Text, SafeAreaView, TouchableOpacity} from 'react-native';
-import styled from 'styled-components/native';
-import StyleSheet from 'styled-components/native';
+import { SafeAreaView } from "react-native"
 
-
-const TextNew = styled.Text`
-  font-size: 24px;
-  color: red;
-`
-
-
+import Login from "./modules/login";
 
 const App = () => {
+
+  const handleOnClick = () => {
+    console.log('PASSOU O CLICK');
+  }
+
   return (
     <SafeAreaView>
-      <TouchableOpacity>
-        <Text>clicar</Text>
-      </TouchableOpacity>
+      <Login />
     </SafeAreaView>
   );
 };
 
-  
+
 
 export default App;
