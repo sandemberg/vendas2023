@@ -1,7 +1,8 @@
-import { View, Text } from "react-native"
+import { View } from "react-native"
 import { ContainerLogin } from "../login.style";
 import InputGlobal from "../../../shared/components/input/Input";
 import ButtonGlobal from "../../../shared/components/button/Button";
+import TextGlobal from "../../../shared/components/text/Text";
 
 
 const Login = () => {
@@ -12,9 +13,10 @@ const Login = () => {
     return (
         <View>
             <ContainerLogin>
-                <Text>Login2</Text>
+                <TextGlobal>ttt</TextGlobal>
                 <InputGlobal />
                 <ButtonGlobal marginn='10px' title="ENTRAR" onPress={handleOnPress}/>
+               
             </ContainerLogin>
            
         </View>
