@@ -3,6 +3,7 @@ import { ContainerLogin } from "../login.style";
 import InputGlobal from "../../../shared/components/input/Input";
 import ButtonGlobal from "../../../shared/components/button/Button";
 import TextGlobal from "../../../shared/components/text/Text";
+import { theme } from "../../../shared/themes/themes";
 
 
 const Login = () => {
@@ -15,7 +16,11 @@ const Login = () => {
             <ContainerLogin>
                 <TextGlobal>ttt</TextGlobal>
                 <InputGlobal />
-                <ButtonGlobal marginn='10px' title="ENTRAR" onPress={handleOnPress}/>
+                <ButtonGlobal 
+                    typeButton={theme.buttons.buttonsTheme.primary} 
+                    margin='10px' 
+                    title="ENTRAR" 
+                    onPress={handleOnPress}/>
                
             </ContainerLogin>
            
