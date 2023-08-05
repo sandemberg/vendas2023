@@ -20,9 +20,9 @@ const Login = () => {
                     typeButton={theme.buttons.buttonsTheme.primary} 
                     margin='10px' 
                     title="ENTRAR" 
-                    onPress={handleOnPress}/>
-               
-            </ContainerLogin>
+                    onPress={handleOnPress}
+                />
+                </ContainerLogin>
            
         </View>
     )
