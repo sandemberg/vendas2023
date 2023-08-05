@@ -25,7 +25,7 @@ const ButtonGlobal = ({typeButton, loading, disabled, title, margin, onPress,  .
     
     const renderText = (color: string) => (
         <>
-        <TextGlobal typee={textTypes.BUTTON_BOLD} cor={color}>
+        <TextGlobal typee={textTypes.BUTTON_SEMI_BOLD} cor={color}>
             {title}
         </TextGlobal>
 

@@ -6,11 +6,11 @@ import { useMemo } from "react";
 interface TextPropss extends TextPropsNative{
     cor?: string;
     typee?: string;
-    custonMargin?: string;
+    marginn?: string;
     fontFamilyy?: string;
 }
 
-const TextGlobal = ({ fontFamilyy, custonMargin, cor, typee, ...props}: TextPropss) => {
+const TextGlobal = ({ fontFamilyy, marginn, cor, typee, ...props}: TextPropss) => {
     const handFontSize = useMemo(() => {
         switch (typee) {
             case textTypes.TITLE_BOLD:
@@ -73,7 +73,11 @@ const TextGlobal = ({ fontFamilyy, custonMargin, cor, typee, ...props}: TextProp
     }, [typee]);
 
     return <ContainerText 
-    {...props} fontFamilyy={fontFamily} fontSizee={handFontSize} colorr={cor} />;
+    {...props} 
+    custonMargin={marginn}
+    fontFamilyy={fontFamily} 
+    fontSizee={handFontSize} 
+    colorr={cor} />;
 };
 
 export default TextGlobal;

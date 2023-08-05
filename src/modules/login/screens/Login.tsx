@@ -4,6 +4,7 @@ import InputGlobal from "../../../shared/components/input/Input";
 import ButtonGlobal from "../../../shared/components/button/Button";
 import TextGlobal from "../../../shared/components/text/Text";
 import { theme } from "../../../shared/themes/themes";
+import { Icon } from "../../../shared/components/icon/icon";
 
 
 const Login = () => {
@@ -14,15 +15,20 @@ const Login = () => {
     return (
         <View>
             <ContainerLogin>
-                <TextGlobal>ttt</TextGlobal>
-                <InputGlobal />
+                <Icon name="home3" size={58} color="blue"/>
+                <InputGlobal 
+                    //errorMessage="Usuário ou senha inválidos" 
+                    placeholder="Digite seu Email" 
+                    title="Email"
+                />
+                
                 <ButtonGlobal 
                     typeButton={theme.buttons.buttonsTheme.primary} 
-                    margin='10px' 
+                    margin='16px' 
                     title="ENTRAR" 
                     onPress={handleOnPress}
                 />
-                </ContainerLogin>
+            </ContainerLogin>
            
         </View>
     )
