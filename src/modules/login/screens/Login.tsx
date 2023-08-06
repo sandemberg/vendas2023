@@ -21,7 +21,14 @@ const Login = () => {
                     placeholder="Digite seu Email" 
                     title="Email"
                 />
-                
+                <InputGlobal 
+                    //errorMessage="Usuário ou senha inválidos" 
+                    margin="0px 0px 16px 0px"
+                    placeholder="Digite sua Senha" 
+                    title="Senha"
+                    secureTextEntry={true} // inibe senha com asterisco
+                />
+
                 <ButtonGlobal 
                     typeButton={theme.buttons.buttonsTheme.primary} 
                     margin='16px' 
