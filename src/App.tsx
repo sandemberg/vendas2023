@@ -1,8 +1,9 @@
-import { Button, SafeAreaView } from "react-native"
+import { SafeAreaView } from "react-native"
 import { useState } from "react";
 
 import Login from "./modules/login";
-import Modal from "./shared/components/modal/modal";
+import ModalGlobal from "./shared/components/modal/Modal";
+import ButtonGlobal from "./shared/components/button/Button";
 
 
 
@@ -16,13 +17,11 @@ const App = () => {
 
   return (
     <SafeAreaView>
-       <Modal onCloseModal={() => setModalVisible(false)} visible={modalVisible} text='TEXTO TESTE' title='TITULO TESTE'/>
-      <Button title='open' onPress={() => setModalVisible(true)}/>
+      <ModalGlobal onCloseModal={() => setModalVisible(false)} visible={modalVisible} text='TEXTO TESTE' title='TITULO TESTE'/>
+      <ButtonGlobal title='open' onPress={() => setModalVisible(true)}/>
       <Login />
     </SafeAreaView>
   ); 
 };
-
-
 
 export default App;

@@ -6,7 +6,7 @@ interface ModalProps extends ModalPropsReact {
     onCloseModal?: () => void;  
 }
 
-const Modal = ({title, text, onCloseModal, ...props}: ModalProps) => {
+const ModalGlobal = ({title, text, onCloseModal, ...props}: ModalProps) => {
     
 
     return (
@@ -15,12 +15,11 @@ const Modal = ({title, text, onCloseModal, ...props}: ModalProps) => {
             transparent={true}
             onRequestClose={() => {
                 Alert.alert('Modal has been closed.');
-            onCloseModal();
+            onCloseModal
             }}
             {...props}
             >
            
-
             <View>
                 <View>
                     <Text>{title}</Text>
@@ -35,4 +34,4 @@ const Modal = ({title, text, onCloseModal, ...props}: ModalProps) => {
     )
 }
 
-export default Modal
+export default ModalGlobal
