@@ -1,4 +1,10 @@
-import {Alert, ModalProps as ModalPropsReact, Modal as ModalReact, Text, Pressable, View} from 'react-native';
+import {Alert, ModalProps as ModalPropsReact, Modal as ModalReact } from 'react-native';
+import { ContainerModal, IconCloseModal } from './modal.style';
+import TextGlobal from '../text/Text';
+import { theme } from '../../themes/themes';
+import { textTypes } from '../text/textTypes';
+import Button from '../button/Button';
+
 
 interface ModalProps extends ModalPropsReact {
     title?: string,
@@ -20,16 +26,19 @@ const ModalGlobal = ({title, text, onCloseModal, ...props}: ModalProps) => {
             {...props}
             >
            
-            <View>
-                <View>
-                    <Text>{title}</Text>
-                    <Text>{text}</Text>
-                    <Pressable
-                        onPress={onCloseModal}>
-                        <Text>Hide Modal</Text>
-                    </Pressable>
-                </View>
-            </View>
+            <ContainerModal>
+                <TextGlobal 
+                    typee={textTypes.PARAGRAPH_SEMI_BOLD} 
+                    cor={theme.colors.mainTheme.primary} 
+                >
+                    {title}
+                </TextGlobal>
+                <TextGlobal>
+                    {text}
+                </TextGlobal>
+                <Button title='OK' onPress={onCloseModal}/>
+                <IconCloseModal onPress={onCloseModal} name='cross' size={13}/>
+            </ContainerModal>
         </ModalReact>
     )
 }
