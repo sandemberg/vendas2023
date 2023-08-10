@@ -12,3 +12,10 @@ export const ContainerLogin = styled.View`
     
 
 `;
+
+export const ImageLogo = styled.Image `
+width: 110px;
+height: 100px;
+margin-bottom: 24px;
+
+`;
