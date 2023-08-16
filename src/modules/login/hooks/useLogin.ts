@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { NativeSyntheticEvent, TextInputChangeEventData } from "react-native";
+import { connectionAPIPost } from "../../../shared/functions/connection/connectionAPI";
 
 
 export const useLogin = () => {
@@ -13,8 +14,7 @@ export const useLogin = () => {
 
     const handleOnPress = async () => {
         setLoading(true);
-        await axios
-        .post('http://192.168.0.25:8080/auth', {
+        await connectionAPIPost('http://192.168.0.25:8080/auth', {
             email,
             password,
         }).catch(() => {
@@ -24,8 +24,8 @@ export const useLogin = () => {
         console.log('clicou')
     
         // TESTE CONEXAO COM BD
-            const returnBD = await axios.get('http://192.168.0.25:8080/correios/01029-010') 
-            console.log('returnBD', returnBD.data)
+       //     const returnBD = await axios.get('http://192.168.0.25:8080/correios/01029-010') 
+        //    console.log('returnBD', returnBD.data)
     };
     
     const handleOnChangeEmail =  (event:NativeSyntheticEvent<TextInputChangeEventData>) =>  {
