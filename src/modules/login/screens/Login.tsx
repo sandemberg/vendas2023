@@ -1,41 +1,21 @@
-import { NativeSyntheticEvent, TextInputChangeEventData, View } from "react-native"
+import {  View } from "react-native"
 import { ContainerLogin, ImageLogo } from "../login.style";
 import InputGlobal from "../../../shared/components/input/Input";
 import ButtonGlobal from "../../../shared/components/button/Button";
 import { theme } from "../../../shared/themes/themes";
 import { useLogin } from "../hooks/useLogin";
-import axios from "axios";
-import { useState } from "react";
-
-
 
 const Login = () => {
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-    const [loading, setLoading] = useState<boolean>(false);
-    const [errorMessage, setErrorMessage] = useState<string>('');
 
-    const handleOnPress = async () => {
-        setLoading(true);
-        const resultAxios = await axios.post('http://192.168.0.25:8080/auth', {
-            email,
-            password,
-        }).catch(() => {
-            setErrorMessage('Usuario ou senha inválidos')
-        })
-        setLoading(false)
-        console.log('clicou')
-    };
-
-    const handleOnChangeEmail =  (event:NativeSyntheticEvent<TextInputChangeEventData>) =>  {
-        setErrorMessage('');
-        setEmail(event.nativeEvent.text);
-    }
-
-    const handleOnChangePassword =  (event:NativeSyntheticEvent<TextInputChangeEventData>) =>  {
-        setErrorMessage('');
-        setPassword(event.nativeEvent.text);
-    }
+    const {
+        email,
+    password,
+    loading,
+    errorMessage,
+    handleOnPress,
+    handleOnChangeEmail,
+    handleOnChangePassword,
+    } = useLogin();
 
     return (
         <View>

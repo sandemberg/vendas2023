@@ -17,27 +17,27 @@ export const useLogin = () => {
         .post('http://192.168.0.25:8080/auth', {
             email,
             password,
-        }). 
-        catch(() => {
-            setErrorMessage('Usuário ou senha inválidos')
-        });
-        setLoading(false);
-        //console.log('clicou')
+        }).catch(() => {
+            setErrorMessage('Usuario ou senha inválidos')
+        })
+        setLoading(false)
+        console.log('clicou')
     
         // TESTE CONEXAO COM BD
-         //   const returnBD = await axios.get('http://192.168.0.25:8080/correios/01029-010') 
-         //   console.log('returnBD', returnBD.data)
+            const returnBD = await axios.get('http://192.168.0.25:8080/correios/01029-010') 
+            console.log('returnBD', returnBD.data)
     };
     
-    const handleOnChangeEmail = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
+    const handleOnChangeEmail =  (event:NativeSyntheticEvent<TextInputChangeEventData>) =>  {
         setErrorMessage('');
         setEmail(event.nativeEvent.text);
     }
-    
-    const handleOnChangePassword = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
+
+    const handleOnChangePassword =  (event:NativeSyntheticEvent<TextInputChangeEventData>) =>  {
         setErrorMessage('');
         setPassword(event.nativeEvent.text);
     }
+
     
 return {
     email,
